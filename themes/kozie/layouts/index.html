@@ -1,0 +1,12 @@
+{{ partial "head.html" . }}
+
+<main class="posts">
+    {{ range .Data.Pages }}
+    <article class="posts__post post">
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Summary }}</p>
+    </article>
+    {{ end }}
+</main>
+
+{{ partial "foot.html" . }}

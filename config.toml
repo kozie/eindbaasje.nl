@@ -1,0 +1,6 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Kozie"
+theme = "kozie"
+publishDir = "docs"
+paginate = 5
