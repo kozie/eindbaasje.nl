@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.org/post/a-new-beginning/</loc>
+    <loc>http://eindbaasje.nl/post/a-new-beginning/</loc>
     <lastmod>2017-04-02T18:06:19+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>http://eindbaasje.nl/</loc>
     <lastmod>2017-04-02T18:06:19+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/post/</loc>
+    <loc>http://eindbaasje.nl/post/</loc>
     <lastmod>2017-04-02T18:06:19+02:00</lastmod>
     <priority>0</priority>
   </url>

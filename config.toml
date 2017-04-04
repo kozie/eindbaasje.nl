@@ -1,6 +1,6 @@
-baseURL = "http://example.org/"
+baseURL = "http://eindbaasje.nl/"
 languageCode = "en-us"
-title = "Kozie"
+title = "Eindbaasje - Blog by Kozie"
 theme = "kozie"
 publishDir = "docs"
 paginate = 5
