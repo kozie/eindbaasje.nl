@@ -1,5 +1,12 @@
 @import 'core/variables';
 
+// core
 @import 'core/reset';
 @import 'core/typography';
 @import 'core/base';
+
+// layout
+@import 'layout/base';
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
