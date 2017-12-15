@@ -31,6 +31,7 @@ imap jj <Esc>
 no <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 no <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 nn <space> <c-w>
+nn <tab> :b<space>
 
 " Insert mode movement
 ino <C-k> <Up>
