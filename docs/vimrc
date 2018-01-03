@@ -2,6 +2,8 @@ set nocompatible
 filetype off
 call plug#begin()
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] } " ga<obj><target>
 Plug 'junegunn/seoul256.vim'
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
@@ -53,10 +55,12 @@ imap jj <Esc>
 no <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 no <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 nn <space> <c-w>
-nn <tab> :b<space>
 nn <leader>f :echo @%<cr>
 nn <leader>ms :mks! .vimsession<cr>
 nn <leader>ss :source .vimsession<cr>
+nn <tab> :Buffers<cr>
+nn <C-p> :Files<cr>
+nn <leader>p :GFiles<cr>
 
 " Insert mode movement
 ino <C-k> <Up>
