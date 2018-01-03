@@ -10,5 +10,8 @@ curl -fLo ~/.vimrc http://eindbaasje.nl/vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     
+# Add FZF_DEFAULT_COMMAND using find to bashrc
+echo "export FZF_DEFAULT_COMMAND='find * -type f'" >> ~/.bashrc
+    
 # Run first setup
 vim +PlugInstall +qall
