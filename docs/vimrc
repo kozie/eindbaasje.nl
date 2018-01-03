@@ -68,6 +68,9 @@ ino <C-j> <Down>
 ino <C-h> <Left>
 ino <C-l> <Right>
 
+" FZF grep
+command! -bang -nargs=* Find call fzf#vim#grep('grep -srnw '.shellescape(<q-args>), 1, <bang>0)
+
 " Relative number switching
 autocmd InsertEnter * :call DisableRelNo()
 autocmd InsertLeave * :call EnableRelNo()
