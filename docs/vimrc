@@ -1,15 +1,36 @@
 set nocompatible
-filetype indent on " plugin
+filetype off
+call plug#begin()
+
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] } " ga<obj><target>
+Plug 'junegunn/seoul256.vim'
+Plug 'Shougo/deoplete.nvim'
+Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'alvan/vim-closetag', { 'for': ['html', 'php', 'xml']}
+Plug 'cakebaker/scss-syntax.vim', { 'for': ['sass', 'scss', 'less', 'css']}
+Plug 'hail2u/vim-css3-syntax', { 'for': ['sass', 'scss', 'less', 'css']}
+
+call plug#end()
+filetype plugin indent on
 
 syntax on
-colo jellybeans
-set bg=light
+colo seoul256
+set bg=dark
 
 set ai si is ic nu rnu ts=4 sw=4 et nowrap
 set backspace=indent,eol,start
 set encoding=utf-8 tenc=utf-8 fenc=utf-8
 set laststatus=2
 set nostartofline
+
+" Plugin settings
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml"
+let g:PHP_outdentphpescape = 0
+let g:acp_enableAtStartup = 0
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
 
 " Netrw settings
 let g:netrw_banner = 0
@@ -27,14 +48,43 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+nmap Y y$
 imap jj <Esc>
 no <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 no <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 nn <space> <c-w>
 nn <tab> :b<space>
+nn <leader>f :echo @%<cr>
+nn <leader>ms :mks! .vimsession<cr>
+nn <leader>ss :source .vimsession<cr>
 
 " Insert mode movement
 ino <C-k> <Up>
 ino <C-j> <Down>
 ino <C-h> <Left>
 ino <C-l> <Right>
+
+" Relative number switching
+autocmd InsertEnter * :call DisableRelNo()
+autocmd InsertLeave * :call EnableRelNo()
+
+" Function to toggle between line numbers and relativenumbers
+function! NumberToggle()
+    if(&relativenumber == 1)
+        call DisableRelNo()
+    else
+        call EnableRelNo()
+    endif
+endfunc
+
+function! EnableRelNo()
+    set number
+    set relativenumber
+endfunc
+
+function! DisableRelNo()
+    set number
+    set norelativenumber
+endfunc
