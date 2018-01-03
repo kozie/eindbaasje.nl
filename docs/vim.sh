@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Execute with..
-# $ bash <(curl -s http://einbaasje.nl/vim.sh)
+# $ bash -c "$(curl -fLsS http://einbaasje.nl/vim.sh)"
 
 # Download vimrc
 curl -fLo ~/.vimrc http://eindbaasje.nl/vimrc
