@@ -3,6 +3,12 @@
 # Execute with..
 # $ bash -c "$(curl -fLsS http://eindbaasje.nl/vim.sh)"
 
+# Check if not root
+if [[ $EUID -eq 0 ]]; then
+   echo "Please do not run as root!" 
+   exit 1
+fi
+
 # Download vimrc
 curl -fLo ~/.vimrc http://eindbaasje.nl/vimrc
 
