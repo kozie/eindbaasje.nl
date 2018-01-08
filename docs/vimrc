@@ -26,6 +26,7 @@ set backspace=indent,eol,start
 set encoding=utf-8 tenc=utf-8 fenc=utf-8
 set laststatus=2
 set nostartofline
+set pastetoggle=<F12>
 
 " Plugin settings
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml"
